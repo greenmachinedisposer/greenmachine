@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  */
 public final class DataSource {
     protected final static String CLASS_FOR_NAME = "com.mysql.cj.jdbc.Driver";
-    protected final static String HOST_NAME = "jdbc:mysql://localhost:3306";
+    protected final static String HOST_NAME = "jdbc:mysql://localhost:3306?zeroDateTimeBehavior=convertToNull&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&useSSL=false";
     protected String USER = "greenmachine";
     protected String PASS = "jerjer360";
 
@@ -34,7 +34,7 @@ public final class DataSource {
     }
 
     public Connection getConnection() throws SQLException, IOException, PropertyVetoException {
-        return dataSource.getConnection();
+        return hikariDataSource.getConnection();
     }
 
     private HikariConfig hikariConfig(){
@@ -46,13 +46,13 @@ public final class DataSource {
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
-        config.setLeakDetectionThreshold(TimeUnit.MINUTES.toMillis(1));
+        config.setLeakDetectionThreshold(TimeUnit.SECONDS.toMillis(30));
         config.setValidationTimeout(TimeUnit.MINUTES.toMillis(1));
         config.setMaximumPoolSize(40);
         config.setMinimumIdle(0);
-        config.setMaxLifetime(TimeUnit.MINUTES.toMillis(5)); // 120 seconds max life time
+        config.setMaxLifetime(TimeUnit.MINUTES.toMillis(2)); // 120 seconds max life time
         config.setIdleTimeout(TimeUnit.MINUTES.toMillis(1)); // minutes
-        config.setConnectionTimeout(TimeUnit.MINUTES.toMillis(1)); // millis
+        config.setConnectionTimeout(TimeUnit.MINUTES.toMillis(5)); // millis
         config.setConnectionTestQuery("/* ping */ SELECT 1");
         return config;
     }
