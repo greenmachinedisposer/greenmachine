@@ -5,6 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import com.green.machine.disposer.authentication.AccessControl;
 import com.green.machine.disposer.authentication.BasicAccessControl;
 import com.green.machine.disposer.authentication.CurrentUser;
+import com.green.machine.disposer.views.DashboardPageView;
 import com.green.machine.disposer.views.LoginPageView;
 import com.green.machine.disposer.views.LoginPageView.LoginListener;
 import com.vaadin.annotations.Theme;
@@ -32,21 +33,7 @@ public class GreenMachineUI extends UI {
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         Page.getCurrent().setTitle("Green Machine Disposer");
-        Responsive.makeResponsive(this);
-//        final VerticalLayout layout = new VerticalLayout();
-//
-//        final TextField name = new TextField();
-//        name.setCaption("Type your name here:");
-//
-//        Button button = new Button("Click Me");
-//        button.addClickListener(e -> {
-//            layout.addComponent(new Label("Thanks " + name.getValue()
-//                    + ", it works!"));
-//        });
-//
-//        layout.addComponents(name, button);
-//
-//        setContent(layout);
+
         setContent(new LoginPageView(accessControl, new LoginListener() {
             private static final long serialVersionUID = 1L;
             @Override
@@ -60,7 +47,7 @@ public class GreenMachineUI extends UI {
     protected void showMainView() {
         System.out.println( CurrentUser.get().getDisplay_name());
         System.out.println( "Successfully Logged in");
-//            setContent(new MainPageView());
+//        setContent(new DashboardPageView());
     }
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = GreenMachineUI.class, productionMode = true)
