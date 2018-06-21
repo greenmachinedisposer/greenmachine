@@ -15,15 +15,13 @@ import java.sql.SQLException;
 /**
  * Created by Jurol on 4/9/2018.
  */
-public class DashboardPageView extends VerticalLayout implements CommonViewInterface, View {
+public class DashboardPageView extends AbstractViewBase{
     public static final String VIEW_NAME = "dashboard";
 
-    protected VerticalLayout gridPart = new VerticalLayout();
 
     public DashboardPageView(){
+        super();
         System.out.println("Dashboard");
-        Navigator navigator = new Navigator(UI.getCurrent(),this);
-        UI.getCurrent().getNavigator().navigateTo(DashboardPageView.VIEW_NAME);
     }
 
     @Override

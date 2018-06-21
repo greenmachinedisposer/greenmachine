@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:28,&quot;GRID_TYPE&quot;:&quot;ColumnGrid,20,55&quot;,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;SpingineTheme&quot;}">
+    <meta name="vaadin-version" content="7.7.0">
+</head>
+<body>
+<vaadin-horizontal-layout style-name="valo-menu-responsive" responsive id="responsive-application-template" immediate size-full>
+    <vaadin-css-layout primary-style-name="valo-menu" responsive immediate _id="menu_part">
+        <vaadin-css-layout style-name="valo-menu-part" immediate _id="layout">
+            <vaadin-horizontal-layout style-name="valo-menu-title orange fly" _id="menuTitle">
+                <vaadin-image></vaadin-image>
+            </vaadin-horizontal-layout>
+            <vaadin-button icon="fonticon://FontAwesome/f0c9" primary-style-name="transparent" style-name="valo-menu-toggle fly mrgLeft" plain-text _id="menuToggle"></vaadin-button>
+            <vaadin-css-layout style-name="valo-menuitems" _id="menuItems">
+                <vaadin-button icon="fonticon://FontAwesome/f200" primary-style-name="valo-menu-item" _id="visualizationLabel">
+                    Visualization
+                </vaadin-button>
+                <vaadin-button icon="fonticon://FontAwesome/f279" primary-style-name="valo-menu-item" _id="mapLabel">
+                    Map
+                </vaadin-button>
+                <vaadin-button icon="fonticon://FontAwesome/f0c0" primary-style-name="valo-menu-item" _id="assetLabel">
+                    Asset
+                </vaadin-button>
+                <vaadin-button icon="fonticon://FontAwesome/f201" primary-style-name="valo-menu-item" _id="reportsLabel">
+                    Reports
+                </vaadin-button>
+                <vaadin-button icon="fonticon://FontAwesome/f1de" primary-style-name="valo-menu-item" _id="integrationLabel">
+                    Integration
+                </vaadin-button>
+            </vaadin-css-layout>
+            <vaadin-menu-bar style-name="user-menu fly" immediate plain-text _id="settings"></vaadin-menu-bar>
+            <vaadin-button icon="fonticon://FontAwesome/f08b" primary-style-name="valo-menu-item" style-name="lOut" plain-text _id="logoutButton">
+                Logout
+            </vaadin-button>
+            <vaadin-horizontal-layout style-name="omcontainer" height-full _id="overlayMenu">
+                <vaadin-css-layout style-name="arrow" _id="arrow"></vaadin-css-layout>
+                <vaadin-css-layout style-name="overlay-menu" width="150px" height-full _id="itemContainer">
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="dashboard">
+                        Dashboard
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="mapLayers">
+                        Map Layers
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="livemapButton">
+                        Live Map
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="geoFences">
+                        Geo-Fence
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="geoFenceGroups">
+                        Geo-Fence Groups
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="locations">
+                        Locations
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="locationGroups">
+                        Location Groups
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="tripPlan">
+                        Trip Plans
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="tripPlayer">
+                        Trip Player
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="vehicles">
+                        Vehicles
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="vessels">
+                        Vessels
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="groups">
+                        Groups
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="assetMaintenance">
+                        Maintenance
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="alerts">
+                        Alerts
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="mileage">
+                        Mileage
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="fuel">
+                        Fuel
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="maintenance">
+                        Maintenance
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="endpoint">
+                        Endpoint
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="devices">
+                        Devices
+                    </vaadin-button>
+                    <vaadin-button style-name="flat-btn" width-full plain-text _id="sensors">
+                        Sensors
+                    </vaadin-button>
+                </vaadin-css-layout>
+            </vaadin-horizontal-layout>
+        </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout responsive immediate size-full _id="content" :expand></vaadin-css-layout>
+</vaadin-horizontal-layout>
+</body>
+</html>
